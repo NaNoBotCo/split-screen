@@ -357,6 +357,22 @@ def fmt(x, nd=3):
     return f"{x:,}" if isinstance(x, int) else str(x)
 
 
+def accounts_html(m):
+    out = ""
+    for a, v in (m.get("accounts") or {}).items():
+        mon = v["monthly"]
+        rows = "".join(f"<tr><td>{k}</td><td class=n>{fmt(x['pictures'])}</td><td class=n>{fmt(x['rfk_left'])}</td>"
+                       f"<td class=n>{fmt(x['rfk_right'])}</td><td class=n>{fmt(x['thing_alone'])}</td>"
+                       f"<td class=n>{(x['share_left'] or 0):.1%}</td><td class=n>{fmt(x.get('left_naming_him'))}</td></tr>" for k, x in mon.items())
+        cps = "".join(f"<tr><td>{c['start']}</td><td>{c['end']}</td><td class=n>{fmt(c['rate_per_day'])}</td></tr>"
+                      for c in (v.get("change_points") or []))
+        out += (f"<h3>{esc(a)}: whole feed</h3><p class=small>First RFK-left picture: {esc(v.get('first_left_month') or '—')}.</p>"
+                f"<div class=chart>{svg_bars_months([(x['share_left'] or 0) * 1000 for x in mon.values()], list(mon))}</div>"
+                f"<table><tr><th>month</th><th>pictures</th><th>RFK left</th><th>RFK right</th><th>thing alone</th><th>share left</th><th>RFK left, text names him</th></tr>{rows}</table>"
+                + (f"<p class=small>Change points in daily RFK-left posts:</p><table><tr><th>from</th><th>to</th><th>per day</th></tr>{cps}</table>" if cps else ""))
+    return out
+
+
 def math_page(m, counts):
     if not m:
         page("math/index.html", "Math — Split Screen", "The numbers.", "<h1>Math</h1><p>No numbers yet.</p>", "math/")
@@ -428,6 +444,7 @@ def math_page(m, counts):
 <h3>RFK-left share by month, per 1,000 pictures</h3>
 <div class="chart">{svg_bars_months(share_series, mon_keys)}</div>
 <table><tr><th>month</th><th>pictures</th><th>his face</th><th>RFK left</th><th>share</th><th>thing alone</th></tr>{mon_rows}</table>
+{accounts_html(m)}
 <h3>Outlets</h3>
 <table><tr><th>outlet</th><th>pictures</th><th>RFK left</th><th>share</th></tr>{outlets}</table>
 

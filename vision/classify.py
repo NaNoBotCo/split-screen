@@ -213,7 +213,7 @@ def look(raw: bytes) -> tuple[dict, Image.Image]:
     return row, im
 
 
-def main(workers: int, limit: int | None, shard: int = 0, shards: int = 1):
+def main(workers: int, limit: int | None, shard: int = 0, shards: int = 1, author: str | None = None):
     con = db.connect()
     # accounts that run the format, then news, then Bluesky link cards, then photos on term posts, then the first pass by name; newest first
     q = ("SELECT image_url FROM items WHERE sha1 IS NULL "
@@ -228,6 +228,8 @@ def main(workers: int, limit: int | None, shard: int = 0, shards: int = 1):
         if True} - {r[0] for r in con.execute(
         "SELECT image_url, coalesce(headline,'') || ' ' || coalesce(text,'') || ' ' || coalesce(link_url,'') FROM items "
         "WHERE sha1 IS NULL AND query='account'") if TOPIC.search(r[1])}
+    if author:
+        q = q.replace("WHERE sha1 IS NULL", "WHERE sha1 IS NULL AND author = '%s'" % author.replace("'", ""))
     urls = [r[0] for r in con.execute(q) if r[0] not in skip
             and int(hashlib.md5(r[0].encode()).hexdigest(), 16) % shards == shard]
     urls = urls[:limit] if limit else urls
@@ -278,6 +280,7 @@ if __name__ == "__main__":
     ap.add_argument("--workers", type=int, default=16)
     ap.add_argument("--limit", type=int)
     ap.add_argument("--shard", default="0/1", help="i/n: take the URLs whose hash mod n is i")
+    ap.add_argument("--author", help="only this account's pictures")
     a = ap.parse_args()
     i, n = (int(x) for x in a.shard.split("/"))
-    main(a.workers, a.limit, i, n)
+    main(a.workers, a.limit, i, n, a.author)
