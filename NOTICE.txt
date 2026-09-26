@@ -1,0 +1,15 @@
+Split Screen — what is in this repository, and under what terms.
+
+CODE — collect/, vision/, tools/, publish.sh
+    SPDX-License-Identifier: MIT — see LICENSE-CODE.
+
+WORDS AND NUMBERS — the page text in docs/, data/*.json in docs/, README.md
+    SPDX-License-Identifier: CC-BY-4.0 — see LICENSE. Credit line: "Nan · nanobotco · CC BY 4.0",
+    with a link to https://nanobotco.github.io/split-screen/ .
+
+PICTURES — docs/img/, docs/card.jpg
+    Thumbnails (320 px) of pictures posted by others, each linked to the post or article it came from.
+    They belong to their owners and carry no licence from this repository.
+
+MODELS — not in this repository
+    OpenCV YuNet and SFace (OpenCV model zoo), CLIP ViT-B/32 trained on LAION-2B (open_clip).

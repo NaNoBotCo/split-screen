@@ -1,0 +1,140 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RFK — Split Screen</title><meta name="description" content="His face on a thing story, nothing beside it.">
+<link rel="canonical" href="https://nanobotco.github.io/split-screen/face/">
+<meta property="og:type" content="website"><meta property="og:title" content="RFK — Split Screen">
+<meta property="og:description" content="His face on a thing story, nothing beside it."><meta property="og:url" content="https://nanobotco.github.io/split-screen/face/">
+<meta property="og:image" content="https://nanobotco.github.io/split-screen/card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://nanobotco.github.io/split-screen/card.jpg">
+<link rel="icon" href="../icon.svg"><style>
+:root{--bg:#0b0b0f;--bg2:#111118;--panel:#16161f;--ink:#f4f1ea;--mute:#aaa497;--line:#2b2b38;--chip:#1d1d29;
+ --hot:#ff5a4e;--sugar:#fff4e0;--gold:#ffd27a;--blue:#8fd0ff;
+ --display:"Avenir Next Condensed","HelveticaNeue-CondensedBold","Arial Narrow Bold",Impact,system-ui,sans-serif;
+ --body:"Avenir Next",Avenir,"Segoe UI",system-ui,-apple-system,"Thonburi","Tahoma",sans-serif;
+ --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color-scheme:dark}
+*{box-sizing:border-box}html{font-size:18px;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.55}
+a{color:var(--gold);text-underline-offset:.18em}a:hover{color:#fff}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+ backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .in{max-width:84rem;margin:0 auto;padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;align-items:center}
+.brand{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.25rem;text-decoration:none;color:var(--ink);
+ display:flex;align-items:center;gap:.5rem}
+.brand i{display:inline-flex;width:1.5rem;height:1rem;border-radius:3px;overflow:hidden;box-shadow:0 0 0 2px var(--hot)}
+.brand i:before,.brand i:after{content:"";flex:1}.brand i:before{background:#c9b8a6}.brand i:after{background:var(--sugar)}
+nav{display:flex;flex-wrap:wrap;gap:.2rem .8rem;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+nav a{color:var(--mute);text-decoration:none;padding:.15rem 0}nav a[aria-current],nav a:hover{color:var(--ink);box-shadow:inset 0 -3px 0 var(--hot)}
+nav a span{font-weight:400;text-transform:none;letter-spacing:0;margin-left:.25rem;opacity:.75}
+main{max-width:84rem;margin:0 auto;padding:1rem 1rem 5rem}
+h1{font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:clamp(2.2rem,7vw,4.4rem);line-height:.95;margin:.6rem 0 .3rem}
+h1 small{display:block;font-size:.34em;color:var(--hot);letter-spacing:.25em;margin-bottom:.5rem}
+h2{font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:clamp(1.3rem,3vw,1.8rem);margin:2.2rem 0 .5rem;
+ border-bottom:2px solid var(--line);padding-bottom:.2rem}
+h2 .th,h1 .th{font-family:var(--body);text-transform:none;font-weight:500;color:var(--mute);font-size:.55em;margin-left:.5rem}
+h1 .th{display:block;margin:.35rem 0 0;font-size:.32em}
+p{max-width:46rem;margin:.55rem 0}.mute{color:var(--mute)}.small{font-size:.84rem}
+.lede{font-size:clamp(1.05rem,2.2vw,1.3rem);max-width:48rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:.6rem;margin:1rem 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.7rem .8rem}
+.stat b{display:block;font-family:var(--display);font-size:2rem;line-height:1;color:var(--ink)}
+.stat span{font-size:.78rem;color:var(--mute)}
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.8rem;margin:1rem 0}
+.door{display:block;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.door:hover{border-color:var(--hot)}
+.door .strip{display:grid;grid-template-columns:repeat(3,1fr);aspect-ratio:3/1;background:#000}
+.door .strip img{width:100%;height:100%;object-fit:cover}
+.door div.t{padding:.6rem .8rem}.door b{font-family:var(--display);font-size:1.35rem;text-transform:uppercase}
+.door .n{float:right;font-family:var(--display);font-size:1.35rem;color:var(--hot)}
+.bar{display:flex;flex-wrap:wrap;gap:.5rem .8rem;align-items:center;margin:.8rem 0 1rem;font-size:.85rem;
+ position:sticky;top:3.1rem;z-index:10;background:var(--bg);padding:.5rem 0;border-bottom:1px solid var(--line)}
+.bar select,.bar input[type=search]{background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:.35rem .5rem;font:inherit}
+.bar label{display:flex;align-items:center;gap:.35rem}
+.bar .count{margin-left:auto;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:.3rem}.chip{background:var(--chip);border:1px solid var(--line);color:var(--ink);border-radius:99px;
+ padding:.15rem .6rem;font:inherit;font-size:.8rem;cursor:pointer}.chip[aria-pressed=true]{background:var(--hot);border-color:var(--hot);color:#000}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:.6rem}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;
+ text-align:left;color:inherit;font:inherit;padding:0}
+.tile:hover{border-color:var(--hot)}
+.tile img{width:100%;aspect-ratio:16/10;object-fit:cover;background:#000;display:block}
+.tile .cap{padding:.45rem .55rem .55rem;font-size:.78rem;line-height:1.35}
+.tile .meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 .5rem;color:var(--mute);font-size:.72rem;margin-bottom:.2rem}
+.tile .meta span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.tile .h{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.doom{height:4px;background:var(--line);border-radius:2px;margin-top:.35rem;overflow:hidden}.doom i{display:block;height:100%;background:var(--hot)}
+.fam{background:var(--hot);color:#000;border-radius:99px;padding:0 .4rem;font-weight:700}
+.more{display:block;margin:1.2rem auto;background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:.6rem 1.2rem;font:inherit;cursor:pointer}
+dialog{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:12px;max-width:min(52rem,94vw);padding:0}
+dialog::backdrop{background:rgba(0,0,0,.8)}
+dialog img{width:100%;display:block;background:#000;max-height:70vh;object-fit:contain}
+dialog .body{padding:.8rem 1rem 1rem;font-size:.9rem}dialog .x{float:right;background:none;border:0;color:var(--ink);font-size:1.5rem;cursor:pointer}
+table{border-collapse:collapse;font-size:.85rem;margin:.6rem 0;width:100%;max-width:46rem}
+th,td{border-bottom:1px solid var(--line);padding:.3rem .5rem;text-align:left;vertical-align:top}th{color:var(--mute);font-weight:600}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+.chart{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.6rem;margin:.8rem 0;max-width:60rem}
+.chart svg{width:100%;height:auto;display:block}
+dfn{font-style:normal;border-bottom:1px dotted var(--mute)}
+code{font-family:var(--mono);font-size:.88em;background:var(--chip);padding:.05em .3em;border-radius:4px}
+footer{border-top:1px solid var(--line);background:var(--bg2);color:var(--mute);font-size:.8rem}
+footer .in{max-width:84rem;margin:0 auto;padding:1.2rem 1rem 3rem}footer a{color:var(--mute)}
+@media (max-width:40rem){html{font-size:16px}.wall{grid-template-columns:repeat(2,1fr)}.bar{top:auto;position:static}}
+</style></head><body>
+<header class="top"><div class="in"><a class="brand" href="../"><i></i>Split Screen</a><nav><a href="../">Home<span lang="th">หน้าแรก</span></a><a href="../left/">RFK left<span lang="th">RFK อยู่ซ้าย</span></a><a href="../right/">RFK right<span lang="th">RFK อยู่ขวา</span></a><a href="../thing/">The thing<span lang="th">เฉพาะของ</span></a><a href="../face/" aria-current=page>RFK<span lang="th">เฉพาะ RFK</span></a><a href="../math/">Math<span lang="th">คณิต</span></a><a href="../data/">Data<span lang="th">ข้อมูล</span></a></nav></div></header>
+<main><h1><small>441 sightings · 316 pictures</small>RFK<span class="th" lang="th">เฉพาะ RFK</span></h1>
+<p class="lede">His face on a thing story, nothing beside it.</p>
+<div class="bar">
+<label>Sort <select id="sort"><option value="d">Newest</option><option value="o">Oldest</option><option value="doom">Doom</option>
+<option value="fam">Most reposted</option><option value="e">Most liked</option></select></label>
+<label>Year <select id="year"><option value="">All</option><option value="2023">2023</option><option value="2025">2025</option><option value="2026">2026</option></select></label>
+<label><input type="checkbox" id="fold" checked> One per picture</label>
+<label><input type="search" id="q" placeholder="headline words" aria-label="Search headlines"></label>
+<span class="count" id="count"></span></div>
+<div class="chips" id="chips"></div>
+<div class="wall" id="wall" aria-live="polite"></div>
+<button class="more" id="more" hidden>More</button>
+<dialog id="dlg"><button class="x" aria-label="Close">×</button><img alt=""><div class="body"></div></dialog>
+<script>
+(async()=>{
+const all=await (await fetch('../data/face.json')).json();
+const $=s=>document.querySelector(s);const wall=$('#wall'),more=$('#more'),dlg=$('#dlg');
+const on=new Set();let shown=0,list=[];
+function hd(a,b){let x=BigInt('0x'+a)^BigInt('0x'+b),n=0;while(x){n+=Number(x&1n);x>>=1n}return n}
+// fold sightings into families: same file, or within 8 bits of perceptual hash
+const fams=[];const famOf=new Map();
+for(const it of all){let f=famOf.get(it.s);
+ if(f===undefined){for(let i=0;i<fams.length&&f===undefined;i++){if(hd(fams[i].p,it.p)<=8)f=i}
+  if(f===undefined){f=fams.length;fams.push({p:it.p,n:0})}famOf.set(it.s,f)}
+ it.f=f;fams[f].n++}
+for(const it of all)it.fn=fams[it.f].n;
+function apply(){const y=$('#year').value,q=$('#q').value.toLowerCase(),s=$('#sort').value,fold=$('#fold').checked;
+ list=all.filter(it=>(!y||it.d.startsWith(y))&&(!on.size||on.has(it.t))&&(!q||it.h.toLowerCase().includes(q)));
+ const k={d:(a,b)=>b.d.localeCompare(a.d),o:(a,b)=>a.d.localeCompare(b.d),doom:(a,b)=>b.doom-a.doom,fam:(a,b)=>b.fn-a.fn||b.d.localeCompare(a.d),e:(a,b)=>(b.e||0)-(a.e||0)}[s];
+ list.sort(k);
+ if(fold){const seen=new Set();list=list.filter(it=>{if(seen.has(it.f))return false;seen.add(it.f);return true})}
+ $('#count').textContent=list.length.toLocaleString()+(fold?' pictures':' sightings');
+ wall.innerHTML='';shown=0;page()}
+function tile(it){const b=document.createElement('button');b.className='tile';
+ const pct=Math.min(100,it.doom/3*100);
+ b.innerHTML=`<img loading="lazy" src="../img/${it.s}.jpg" alt=""><div class="cap"><div class="meta"><span>${it.d}</span><span>${it.fn>1?`<span class="fam" title="sightings of this picture">×${it.fn}</span> `:''}${esc(it.a||'')}</span></div><div class="h">${esc(it.h)}</div><div class="doom" title="doom ${it.doom}"><i style="width:${pct}%"></i></div></div>`;
+ b.onclick=()=>open(it);return b}
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function page(){const f=document.createDocumentFragment();for(const it of list.slice(shown,shown+120))f.appendChild(tile(it));
+ wall.appendChild(f);shown+=120;more.hidden=shown>=list.length}
+function open(it){dlg.querySelector('img').src=`../img/${it.s}.jpg`;
+ const sib=all.filter(x=>x.f===it.f).sort((a,b)=>a.d.localeCompare(b.d));
+ dlg.querySelector('.body').innerHTML=`<p><b>${it.d}</b> · ${esc(it.a)} · <a href="${esc(it.u)}" rel="noopener nofollow" target="_blank">source</a></p><p>${esc(it.h)}</p>
+ <p class="small mute">thing: ${esc(it.t)} (${it.ts}) · face match ${it.r} · doom ${it.doom}${it.e?` · likes+reposts ${it.e}`:''}</p>
+ ${sib.length>1?`<p class="small">${sib.length} sightings of this picture, first ${sib[0].d}:</p><ul class="small">${sib.slice(0,12).map(x=>`<li>${x.d} <a href="${esc(x.u)}" rel="noopener nofollow" target="_blank">${esc(x.a)}</a></li>`).join('')}</ul>`:''}`;
+ dlg.showModal()}
+dlg.querySelector('.x').onclick=()=>dlg.close();dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
+for(const c of document.querySelectorAll('.chip'))c.onclick=()=>{const t=c.dataset.t;on.has(t)?on.delete(t):on.add(t);c.setAttribute('aria-pressed',on.has(t));apply()};
+for(const id of ['#sort','#year','#fold'])$(id).onchange=apply;$('#q').oninput=apply;more.onclick=page;apply();
+})();
+</script></main>
+<footer><div class="in"><p>Split Screen catalogs pictures posted beside Robert F. Kennedy Jr., 2023-09-26 to today:
+Bluesky posts and news articles (GDELT) that name him. Each tile links to where it was posted.
+Pictures belong to their owners; tiles are 320-pixel thumbnails for comparison.</p>
+<p lang="th">รวมภาพที่โพสต์คู่กับ RFK Jr. ตั้งแต่ 26 ก.ย. 2566 ถึงวันนี้ แต่ละภาพลิงก์ไปยังโพสต์ต้นทาง</p>
+<p>Code MIT · words and numbers CC BY 4.0 · <a href="../data/">data</a></p></div></footer>
+</body></html>
