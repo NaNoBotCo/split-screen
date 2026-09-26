@@ -1,33 +1,33 @@
 {
- "built": "2026-09-26T14:37+00:00",
+ "built": "2026-09-26T14:40+00:00",
  "window": [
   "2023-09-26",
   "2026-09-26"
  ],
- "items_catalogued": 794903,
- "pictures_looked_at": 20857,
- "sightings_scored": 24644,
+ "items_catalogued": 813829,
+ "pictures_looked_at": 23087,
+ "sightings_scored": 27094,
  "thing_stories": {
-  "pictures": 20256,
-  "with_his_face": 340,
-  "rfk_left": 73,
+  "pictures": 22516,
+  "with_his_face": 350,
+  "rfk_left": 74,
   "rfk_right": 8,
-  "thing_alone": 1872,
-  "share_face": 0.0168,
+  "thing_alone": 1973,
+  "share_face": 0.0155,
   "share_face_ci": [
-   0.0151,
-   0.0186
+   0.014,
+   0.0172
   ],
-  "share_left": 0.0036,
+  "share_left": 0.0033,
   "share_left_ci": [
-   0.0029,
-   0.0045
+   0.0026,
+   0.0041
   ],
-  "left_given_face_and_thing": 0.9012,
-  "thing_pictures_with_him_beside": 0.0415,
+  "left_given_face_and_thing": 0.9024,
+  "thing_pictures_with_him_beside": 0.0399,
   "thing_pictures_with_him_beside_ci": [
-   0.0335,
-   0.0513
+   0.0323,
+   0.0493
   ],
   "by_outlet": {
    "threads.com": {
@@ -240,36 +240,36 @@
     ]
    },
    "2025-12": {
-    "pictures": 91,
-    "face": 0,
-    "rfk_left": 0,
-    "thing_alone": 3,
-    "share_left": 0.0,
+    "pictures": 894,
+    "face": 6,
+    "rfk_left": 1,
+    "thing_alone": 46,
+    "share_left": 0.0011,
     "share_left_ci": [
-     0.0,
-     0.0405
+     0.0002,
+     0.0063
     ]
    },
    "2026-01": {
-    "pictures": 206,
-    "face": 1,
+    "pictures": 1605,
+    "face": 5,
     "rfk_left": 1,
-    "thing_alone": 7,
-    "share_left": 0.0049,
+    "thing_alone": 64,
+    "share_left": 0.0006,
     "share_left_ci": [
-     0.0009,
-     0.027
+     0.0001,
+     0.0035
     ]
    },
    "2026-02": {
-    "pictures": 1752,
+    "pictures": 1810,
     "face": 9,
     "rfk_left": 0,
-    "thing_alone": 57,
+    "thing_alone": 58,
     "share_left": 0.0,
     "share_left_ci": [
      0.0,
-     0.0022
+     0.0021
     ]
    },
    "2026-03": {
@@ -351,23 +351,23 @@
    }
   },
   "left_logit_slope_per_month": {
-   "slope": 0.0245,
-   "se": 0.0258,
-   "odds_ratio_per_year": 1.342
+   "slope": 0.0435,
+   "se": 0.0254,
+   "odds_ratio_per_year": 1.686
   }
  },
  "accounts": {
   "factpostnews.bsky.social": {
    "monthly": {
     "2025-01": {
-     "pictures": 47,
+     "pictures": 49,
      "rfk_left": 0,
      "rfk_right": 0,
      "thing_alone": 3,
      "share_left": 0.0,
      "share_left_ci": [
       0.0,
-      0.0756
+      0.0727
      ],
      "left_naming_him": 0
     },
@@ -420,14 +420,14 @@
      "left_naming_him": 0
     },
     "2025-06": {
-     "pictures": 51,
+     "pictures": 53,
      "rfk_left": 0,
      "rfk_right": 1,
      "thing_alone": 1,
      "share_left": 0.0,
      "share_left_ci": [
-      0.0,
-      0.07
+      -0.0,
+      0.0676
      ],
      "left_naming_him": 0
     },
@@ -504,14 +504,14 @@
      "left_naming_him": 0
     },
     "2026-01": {
-     "pictures": 127,
+     "pictures": 129,
      "rfk_left": 0,
      "rfk_right": 0,
      "thing_alone": 5,
      "share_left": 0.0,
      "share_left_ci": [
       0.0,
-      0.0294
+      0.0289
      ],
      "left_naming_him": 0
     },
@@ -576,40 +576,40 @@
      "left_naming_him": 0
     },
     "2026-07": {
-     "pictures": 273,
-     "rfk_left": 10,
+     "pictures": 275,
+     "rfk_left": 11,
      "rfk_right": 0,
      "thing_alone": 11,
-     "share_left": 0.0366,
+     "share_left": 0.04,
      "share_left_ci": [
-      0.02,
-      0.0661
+      0.0225,
+      0.0702
      ],
-     "left_naming_him": 3
+     "left_naming_him": 4
     },
     "2026-08": {
-     "pictures": 204,
-     "rfk_left": 18,
+     "pictures": 235,
+     "rfk_left": 31,
      "rfk_right": 0,
-     "thing_alone": 2,
-     "share_left": 0.0882,
+     "thing_alone": 13,
+     "share_left": 0.1319,
      "share_left_ci": [
-      0.0565,
-      0.1352
+      0.0945,
+      0.1812
      ],
      "left_naming_him": 1
     },
     "2026-09": {
-     "pictures": 124,
-     "rfk_left": 6,
+     "pictures": 157,
+     "rfk_left": 22,
      "rfk_right": 0,
-     "thing_alone": 1,
-     "share_left": 0.0484,
+     "thing_alone": 9,
+     "share_left": 0.1401,
      "share_left_ci": [
-      0.0224,
-      0.1016
+      0.0944,
+      0.2031
      ],
-     "left_naming_him": 0
+     "left_naming_him": 1
     }
    },
    "first_left_month": "2026-07",
@@ -621,38 +621,33 @@
     },
     {
      "start": "2026-07-14",
-     "end": "2026-09-01",
-     "rate_per_day": 0.68
-    },
-    {
-     "start": "2026-09-02",
      "end": "2026-09-26",
-     "rate_per_day": 0.08
+     "rate_per_day": 0.853
     }
    ]
   }
  },
  "classes": {
   "rfk_left": {
-   "sightings": 84,
-   "pictures": 76,
-   "families": 71,
+   "sightings": 85,
+   "pictures": 77,
+   "families": 72,
    "by_source": {
-    "bsky": 80,
+    "bsky": 81,
     "site": 4
    },
-   "doom_mean": 1.316,
+   "doom_mean": 1.306,
    "doom_mean_ci": [
-    1.138,
-    1.496
+    1.137,
+    1.486
    ],
-   "doom_share_nonzero": 0.893,
-   "reuse_gini": 0.1422,
+   "doom_share_nonzero": 0.894,
+   "reuse_gini": 0.1407,
    "reuse_powerlaw": {
-    "alpha": 2.257,
+    "alpha": 2.259,
     "xmin": 1,
-    "ks": 0.8873,
-    "n_tail": 71
+    "ks": 0.8889,
+    "n_tail": 72
    },
    "top_families": [
     {
@@ -761,22 +756,22 @@
    ]
   },
   "thing_only": {
-   "sightings": 2798,
-   "pictures": 1902,
-   "families": 1685,
+   "sightings": 2903,
+   "pictures": 2003,
+   "families": 1777,
    "by_source": {
-    "bsky": 1486,
+    "bsky": 1591,
     "site": 1312
    },
-   "doom_mean": 0.294,
+   "doom_mean": 0.291,
    "doom_mean_ci": [
-    0.272,
-    0.317
+    0.271,
+    0.313
    ],
-   "doom_share_nonzero": 0.313,
-   "reuse_gini": 0.3834,
+   "doom_share_nonzero": 0.314,
+   "reuse_gini": 0.3737,
    "reuse_powerlaw": {
-    "alpha": 2.463,
+    "alpha": 2.455,
     "xmin": 5,
     "ks": 0.1795,
     "n_tail": 39
@@ -833,21 +828,21 @@
    ]
   },
   "rfk_only": {
-   "sightings": 508,
-   "pictures": 381,
-   "families": 251,
+   "sightings": 517,
+   "pictures": 390,
+   "families": 260,
    "by_source": {
-    "bsky": 403,
+    "bsky": 412,
     "gdelt": 21,
     "site": 84
    },
-   "doom_mean": 0.405,
+   "doom_mean": 0.403,
    "doom_mean_ci": [
     0.361,
-    0.449
+    0.446
    ],
-   "doom_share_nonzero": 0.61,
-   "reuse_gini": 0.4473,
+   "doom_share_nonzero": 0.611,
+   "reuse_gini": 0.4415,
    "reuse_powerlaw": {
     "alpha": 2.484,
     "xmin": 5,
@@ -908,26 +903,26 @@
  },
  "left_vs_right": {
   "sightings": {
-   "left": 84,
+   "left": 85,
    "right": 20
   },
   "families": {
-   "left": 71,
+   "left": 72,
    "right": 9
   },
-  "share_left_sightings": 0.8077,
+  "share_left_sightings": 0.8095,
   "share_left_ci": [
-   0.7215,
-   0.8719
+   0.724,
+   0.8732
   ],
-  "binom_p_sightings": 1.64e-10,
+  "binom_p_sightings": 1.01e-10,
   "beta_posterior_p_left_gt_half": 1.0,
-  "share_left_families": 0.8875,
+  "share_left_families": 0.8889,
   "share_left_families_ci": [
-   0.7998,
-   0.9397
+   0.8021,
+   0.9404
   ],
-  "binom_p_families": 4.37e-13,
+  "binom_p_families": 2.46e-13,
   "seam_x_mean": 0.5,
   "seam_x_sd": 0.0
  },
@@ -935,8 +930,8 @@
   "rfk_left": {
    "germs & disease": 21,
    "produce": 13,
+   "vaccines": 8,
    "seed oil": 7,
-   "vaccines": 7,
    "plated food": 6,
    "raw meat": 6,
    "sugar": 5,
@@ -963,43 +958,43 @@
    "tobacco & vapes": 1
   },
   "thing_only": {
-   "pills & painkillers": 677,
-   "vaccines": 253,
-   "fast food": 247,
-   "candy": 186,
-   "plated food": 148,
-   "processed meat": 96,
-   "raw meat": 96,
-   "ice cream": 87,
-   "sweeteners": 83,
-   "seed oil": 77,
-   "soda": 77,
+   "pills & painkillers": 685,
+   "vaccines": 264,
+   "fast food": 254,
+   "candy": 215,
+   "plated food": 151,
+   "raw meat": 102,
+   "processed meat": 100,
+   "ice cream": 91,
+   "sweeteners": 87,
+   "seed oil": 80,
+   "soda": 79,
    "chips & snacks": 76,
-   "food dye": 66,
+   "food dye": 68,
+   "germs & disease": 67,
+   "donuts & cake": 66,
    "milk": 62,
-   "donuts & cake": 62,
-   "germs & disease": 62,
    "cereal": 50,
-   "chemicals": 44,
-   "water & fluoride": 39,
+   "chemicals": 45,
+   "water & fluoride": 40,
+   "phones & screens": 38,
    "produce": 38,
    "sugar": 38,
    "school lunch": 36,
-   "phones & screens": 34,
-   "tobacco & vapes": 31,
-   "energy drinks": 29,
-   "sunscreen & cosmetics": 26,
+   "tobacco & vapes": 32,
+   "energy drinks": 30,
+   "infant formula": 28,
+   "sunscreen & cosmetics": 27,
    "alcohol": 26,
-   "infant formula": 25,
    "pet food": 14,
-   "eggs": 13
+   "eggs": 14
   },
   "rfk_only": {
-   "vaccines": 307,
-   "sweeteners": 90,
+   "vaccines": 311,
+   "sweeteners": 91,
    "phones & screens": 33,
-   "candy": 26,
-   "germs & disease": 10,
+   "candy": 28,
+   "germs & disease": 11,
    "fast food": 7,
    "water & fluoride": 6,
    "tobacco & vapes": 4,
@@ -1014,7 +1009,8 @@
    "donuts & cake": 1,
    "sunscreen & cosmetics": 1,
    "plated food": 1,
-   "pet food": 1
+   "pet food": 1,
+   "cereal": 1
   }
  },
  "thing_entropy": {
@@ -1029,23 +1025,28 @@
    "kinds": 8
   },
   "thing_only": {
-   "bits": 4.173,
-   "effective_kinds": 18.04,
+   "bits": 4.182,
+   "effective_kinds": 18.15,
    "kinds": 30
   },
   "rfk_only": {
-   "bits": 2.067,
-   "effective_kinds": 4.19,
-   "kinds": 20
+   "bits": 2.089,
+   "effective_kinds": 4.26,
+   "kinds": 21
   }
  },
- "jsd_left_right_things": 0.3785,
+ "jsd_left_right_things": 0.3787,
  "chi2_side_by_thing": {
-  "chi2": 32.148,
+  "chi2": 32.531,
   "dof": 20,
-  "p": 0.0417
+  "p": 0.038
  },
  "monthly_left_entropy": {
+  "2025-12": {
+   "bits": -0.0,
+   "effective_kinds": 1.0,
+   "kinds": 1
+  },
   "2026-01": {
    "bits": -0.0,
    "effective_kinds": 1.0,
@@ -1084,19 +1085,19 @@
  },
  "doom_tests": {
   "rfk_left_vs_rfk_only": {
-   "U": 34858.0,
-   "p": 1.78e-21,
-   "prob_superiority": 0.8169
+   "U": 35837.0,
+   "p": 1.51e-21,
+   "prob_superiority": 0.8155
   },
   "rfk_right_vs_rfk_only": {
-   "U": 4074.0,
+   "U": 4148.0,
    "p": 0.121,
-   "prob_superiority": 0.401
+   "prob_superiority": 0.4012
   },
   "thing_only_vs_rfk_only": {
-   "U": 523343.5,
-   "p": 2.78e-28,
-   "prob_superiority": 0.3682
+   "U": 551816.0,
+   "p": 4.74e-29,
+   "prob_superiority": 0.3677
   }
  },
  "doom_words_split": {
@@ -1124,18 +1125,18 @@
   "fired": 2,
   "removed": 2,
   "investigate": 2,
-  "catastrophic": 2
+  "opener": 2
  },
  "engagement": {
   "rfk_left": {
-   "n": 80,
-   "median": 124.5,
+   "n": 81,
+   "median": 124.0,
    "median_ci": [
-    102.487,
-    138.5
+    103.0,
+    138.0
    ],
-   "mean": 203.56,
-   "p99": 1590.1699999999933
+   "mean": 201.05,
+   "p99": 1579.400000000003
   },
   "rfk_right": {
    "n": 17,
@@ -1148,34 +1149,34 @@
    "p99": 222.79999999999998
   },
   "thing_only": {
-   "n": 1486,
-   "median": 3.0,
+   "n": 1591,
+   "median": 4.0,
    "median_ci": [
-    2.0,
-    4.0
+    3.0,
+    5.0
    ],
-   "mean": 50.2,
-   "p99": 515.4500000000021
+   "mean": 51.71,
+   "p99": 503.8999999999992
   },
   "rfk_only": {
-   "n": 403,
+   "n": 412,
    "median": 2.0,
    "median_ci": [
     1.0,
     3.0
    ],
-   "mean": 40.22,
-   "p99": 367.74000000000024
+   "mean": 40.88,
+   "p99": 366.5699999999998
   }
  },
  "engagement_kruskal": {
-  "H": 108.517,
-  "p": 2.29e-23
+  "H": 103.967,
+  "p": 2.18e-22
  },
  "doom_vs_engagement_spearman": {
-  "rho": 0.4337,
-  "p": 9.1e-06,
-  "n": 97
+  "rho": 0.4428,
+  "p": 4.98e-06,
+  "n": 98
  },
  "daily": {
   "rfk_left": [
@@ -1994,7 +1995,7 @@
    0,
    0,
    0,
-   0,
+   1,
    0,
    0,
    0,
@@ -3835,7 +3836,7 @@
    0,
    0,
    0,
-   0,
+   1,
    0,
    0,
    0,
@@ -4176,68 +4177,68 @@
    1,
    0,
    2,
+   5,
+   1,
    2,
-   1,
-   1,
-   0,
+   5,
    0,
    1,
    1,
    1,
+   4,
+   4,
+   4,
    1,
    1,
+   4,
+   6,
+   5,
+   5,
    0,
    0,
-   1,
-   1,
-   1,
-   1,
-   1,
+   2,
    0,
    0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
+   2,
    0,
    2,
    1,
    1,
    2,
    0,
-   0,
-   0,
+   4,
    3,
    1,
    1,
-   1,
-   1,
-   0,
-   0,
-   0,
-   1,
-   1,
-   1,
-   1,
-   0,
-   0,
-   0,
-   1,
-   1,
+   12,
+   4,
    2,
-   2,
-   0,
+   4,
    1,
    3,
+   0,
+   4,
+   4,
+   3,
+   2,
+   4,
+   3,
+   0,
+   2,
+   3,
+   1,
+   4,
+   4,
+   0,
+   1,
+   1,
+   1,
+   1,
+   4,
+   3,
+   0,
+   1,
+   4,
    3,
    2,
    37,
@@ -5277,46 +5278,12 @@
    0,
    0,
    0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
+   2,
    0,
    0,
    0,
    0,
    1,
-   1,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
    0,
    0,
    0,
@@ -5327,6 +5294,40 @@
    2,
    0,
    0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   0,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   2,
+   0,
+   1,
    0,
    0,
    0,
@@ -5579,11 +5580,11 @@
   "rfk_left": [
    {
     "start": "2023-09-26",
-    "end": "2026-01-19",
+    "end": "2025-12-18",
     "rate_per_day": 0.0
    },
    {
-    "start": "2026-01-20",
+    "start": "2025-12-19",
     "end": "2026-07-13",
     "rate_per_day": 0.034
    },
@@ -5613,18 +5614,18 @@
   "thing_only": [
    {
     "start": "2023-09-26",
-    "end": "2024-12-20",
-    "rate_per_day": 0.604
+    "end": "2025-01-20",
+    "rate_per_day": 0.584
    },
    {
-    "start": "2024-12-21",
-    "end": "2025-01-05",
-    "rate_per_day": 0.0
+    "start": "2025-01-21",
+    "end": "2025-12-01",
+    "rate_per_day": 0.81
    },
    {
-    "start": "2025-01-06",
+    "start": "2025-12-02",
     "end": "2026-02-04",
-    "rate_per_day": 0.787
+    "rate_per_day": 2.338
    },
    {
     "start": "2026-02-05",
@@ -5675,99 +5676,99 @@
  },
  "hawkes": {
   "rfk_left": {
-   "mu_per_day": 0.0047,
+   "mu_per_day": 0.0058,
    "branching_ratio": 0.999,
-   "decay_hours": 79.29,
-   "n": 84
+   "decay_hours": 75.28,
+   "n": 85
   },
   "rfk_right": null,
   "thing_only": {
-   "mu_per_day": 0.7328,
-   "branching_ratio": 0.7142,
-   "decay_hours": 3.23,
-   "n": 2798
+   "mu_per_day": 0.7641,
+   "branching_ratio": 0.7131,
+   "decay_hours": 3.55,
+   "n": 2903
   }
  },
  "hour_of_day_rfk_left": {
-  "R": 0.7706,
-  "z": 49.886,
-  "p": 6.02e-27,
-  "peak_hour_utc": 16.96,
-  "n": 84
+  "R": 0.7694,
+  "z": 50.322,
+  "p": 3.72e-27,
+  "peak_hour_utc": 16.92,
+  "n": 85
  },
  "news_social_xcorr": {
   "by_lag_days": [
    [
     -14,
-    -0.0112
+    -0.0125
    ],
    [
     -13,
-    -0.0112
+    -0.0125
    ],
    [
     -12,
-    -0.0112
+    -0.0125
    ],
    [
     -11,
-    -0.0112
+    -0.0124
    ],
    [
     -10,
-    -0.0111
+    -0.0124
    ],
    [
     -9,
-    -0.0111
+    -0.0124
    ],
    [
     -8,
-    -0.0111
+    -0.0124
    ],
    [
     -7,
-    -0.0111
+    -0.0123
    ],
    [
     -6,
-    -0.0111
+    -0.0123
    ],
    [
     -5,
-    -0.011
+    -0.0123
    ],
    [
     -4,
-    -0.011
+    -0.0123
    ],
    [
     -3,
-    -0.011
+    -0.0122
    ],
    [
     -2,
-    -0.011
+    -0.0122
    ],
    [
     -1,
-    -0.011
+    -0.0122
    ],
    [
     0,
-    -0.0109
+    -0.0122
    ],
    [
     1,
-    -0.0086
+    -0.0095
    ],
    [
     2,
-    -0.0034
+    -0.0039
    ],
    [
     3,
-    -0.001
+    -0.0014
    ],
    [
     4,
@@ -5820,7 +5821,7 @@
   ]
  },
  "rfk_face_x": {
-  "left_mean": 0.2606,
+  "left_mean": 0.261,
   "right_mean": 0.664
  }
 }

@@ -307,8 +307,10 @@ def main():
     acct = defaultdict(lambda: defaultdict(lambda: [0, 0, 0, 0, 0]))
     NAMES = re.compile(r"\b(RFK|Kennedy|HHS)\b")
     seen_ap = set()
+    # a post found first by a term search keeps that query; the account is who posted it
+    fed = {r["author"] for r in rows if r["query"] == "account"}
     for r in rows:
-        if r["query"] != "account" or (r["author"], r["sha1"]) in seen_ap:
+        if r["author"] not in fed or (r["author"], r["sha1"]) in seen_ap:
             continue
         seen_ap.add((r["author"], r["sha1"]))
         m = acct[r["author"]][r["date"].strftime("%Y-%m")]
@@ -326,7 +328,11 @@ def main():
                       "share_left": round(v[1] / v[0], 4) if v[0] else None, "share_left_ci": wilson(v[1], v[0]),
                       "left_naming_him": v[4]}
                   for k, v in sorted(months_a.items())}
-        d_left = daily([r for r in rows if r["author"] == a and r["query"] == "account"], lambda r: r["klass"] == "rfk_left")
+        one = {}
+        for r in rows:
+            if r["author"] == a:
+                one.setdefault(r["sha1"], r)
+        d_left = daily(list(one.values()), lambda r: r["klass"] == "rfk_left")
         first = next((k for k, v in sorted(months_a.items()) if v[1]), None)
         out["accounts"][a] = {"monthly": series, "first_left_month": first,
                               "change_points": pelt_poisson(d_left) if d_left.sum() >= 5 else None}
