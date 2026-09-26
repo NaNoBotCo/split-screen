@@ -11,6 +11,7 @@ from __future__ import annotations
 import datetime as dt
 import json
 import math
+import re
 import sqlite3
 import sys
 from collections import Counter, defaultdict
@@ -301,6 +302,34 @@ def main():
         out["thing_stories"]["left_logit_slope_per_month"] = {"slope": round(float(beta[1]), 4),
                                                              "se": round(float(math.sqrt(cov[1, 1])), 4),
                                                              "odds_ratio_per_year": round(float(math.exp(12 * beta[1])), 3)}
+
+    # one account's whole feed: the denominator is every picture it posted, so month-to-month shares compare
+    acct = defaultdict(lambda: defaultdict(lambda: [0, 0, 0, 0, 0]))
+    NAMES = re.compile(r"\b(RFK|Kennedy|HHS)\b")
+    seen_ap = set()
+    for r in rows:
+        if r["query"] != "account" or (r["author"], r["sha1"]) in seen_ap:
+            continue
+        seen_ap.add((r["author"], r["sha1"]))
+        m = acct[r["author"]][r["date"].strftime("%Y-%m")]
+        m[0] += 1
+        m[1] += r["klass"] == "rfk_left"
+        m[2] += r["klass"] == "rfk_right"
+        m[3] += r["klass"] == "thing_only"
+        m[4] += r["klass"] == "rfk_left" and bool(NAMES.search(" ".join(x for x in (r["text"], r["headline"]) if x)))
+    out["accounts"] = {}
+    for a, months_a in acct.items():
+        tot_left = sum(v[1] for v in months_a.values())
+        if tot_left < 3:
+            continue
+        series = {k: {"pictures": v[0], "rfk_left": v[1], "rfk_right": v[2], "thing_alone": v[3],
+                      "share_left": round(v[1] / v[0], 4) if v[0] else None, "share_left_ci": wilson(v[1], v[0]),
+                      "left_naming_him": v[4]}
+                  for k, v in sorted(months_a.items())}
+        d_left = daily([r for r in rows if r["author"] == a and r["query"] == "account"], lambda r: r["klass"] == "rfk_left")
+        first = next((k for k, v in sorted(months_a.items()) if v[1]), None)
+        out["accounts"][a] = {"monthly": series, "first_left_month": first,
+                              "change_points": pelt_poisson(d_left) if d_left.sum() >= 5 else None}
 
     # families over every scored picture that landed in a class
     kept = [r for r in rows if r["klass"] in CLASSES]
