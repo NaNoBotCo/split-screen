@@ -1,8 +1,8 @@
-.venv/
-build/
-data/
-models/
-logs/
+/.venv/
+/build/
+/data/
+/models/
+/logs/
 __pycache__/
 *.pyc
 .DS_Store
