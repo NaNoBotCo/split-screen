@@ -14,10 +14,10 @@ WEIGHTS = {
         r"deadl(y|ier|iest)", r"lethal", r"kill(s|ed|ing|er)?", r"death(s)?", r"die(s|d)?", r"dying",
         r"outbreak", r"epidemic", r"pandemic", r"catastroph\w*", r"disaster\w*", r"devastat\w*", r"horrif\w*",
         r"neurotox\w*", r"autism", r"measles", r"allergen\w*", r"banned|ban(s|ning)?", r"emergency"],
-    2: [r"crisis", r"danger\w*", r"warn(s|ing|ed)?", r"alarm\w*", r"harm\w*", r"threat\w*", r"scar(e|y|ed)",
+    2: [r"crisis", r"danger\w*", r"warn(s|ing|ed)?", r"alarm\w*", r"harm\w*", r"threat\w*", r"scar(e|y|ed)",  # stylecheck: allow — classifier vocabulary, code
         r"fear\w*", r"shock\w*", r"crackdown", r"war on", r"declares? war", r"slash\w*", r"gutt?ed", r"eliminat\w*",
         r"obes\w*", r"diabet\w*", r"infertil\w*", r"heart disease", r"linked to", r"causes?", r"chaos",
-        r"pulled from shelves", r"removed", r"poisonous", r"risk(s|y)?", r"unsafe", r"illness\w*", r"sick\w*",
+        r"pulled from shelves", r"removed", r"poisonous", r"risk(s|y)?", r"unsafe", r"illness\w*", r"sick\w*",  # stylecheck: allow — classifier vocabulary, code
         r"investigat\w*", r"lawsuit", r"fired", r"layoffs?", r"collapse\w*", r"panic\w*"],
     1: [r"fda", r"cdc", r"hhs", r"announc\w*", r"urg\w*", r"just in", r"report(s|ed)?", r"study", r"experts?",
         r"no longer", r"end(s|ing)?", r"cut(s|ting)?", r"could", r"may", r"million(s)?", r"billion(s)?"],
