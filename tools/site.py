@@ -128,14 +128,18 @@ def page(path: str, title: str, desc: str, body: str, current: str = "") -> None
     nav = "".join(f'<a href="{up}{h}"{" aria-current=page" if h == current else ""}>{esc(e)}<span lang="th">{esc(t)}</span></a>'
                   for h, e, t in links)
     url = f"{SITE_URL}/{path.rsplit('index.html', 1)[0]}"
+    # each page serves its own card (tools/card.py): the home card, or cards/<folder>.jpg
+    card = f"{SITE_URL}/card.jpg" if path == "index.html" else f"{SITE_URL}/cards/{path.split('/')[0]}.jpg"
+    card_alt = "Card: " + title.split(" — ")[0] + ", Split Screen, a wall of split-screen pictures"
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title><meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{url}">
 <meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE_URL}/card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE_URL}/card.jpg">
+<meta property="og:image" content="{card}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg"><meta property="og:image:alt" content="{esc(card_alt)}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{card}"><meta name="twitter:image:alt" content="{esc(card_alt)}">
 <link rel="icon" href="{up}icon.svg"><style>{CSS}</style></head><body>
 <header class="top"><div class="in"><a class="brand" href="{up}"><i></i>Split Screen</a><nav>{nav}</nav></div></header>
 <main>{body}</main>
