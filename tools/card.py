@@ -28,9 +28,9 @@ def font(path, size, index=0):
         return ImageFont.load_default()
 
 
-def tiles():
+def tiles(slugs=("left", "right", "thing", "face")):
     out = []
-    for slug in ("left", "right", "thing", "face"):
+    for slug in slugs:
         p = SITE / "data" / f"{slug}.json"
         if p.exists():
             rows = sorted(json.loads(p.read_text()), key=lambda x: -x["doom"])
@@ -44,10 +44,12 @@ def tiles():
     return out[:24]
 
 
-def build():
+def build(out="card.jpg", head="SPLIT SCREEN", lines=None, slugs=("left", "right", "thing", "face"),
+          address="nanobotco.github.io/split-screen"):
+    """The home card, or one page's: the same wall of tiles, that page's title and line, its address."""
     img = Image.new("RGB", (W, H), BG)
     cw, ch = 200, 126
-    for i, p in enumerate(tiles()):
+    for i, p in enumerate(tiles(slugs)):
         t = Image.open(p).convert("RGB")
         r = max(cw / t.width, ch / t.height)
         t = t.resize((int(t.width * r) + 1, int(t.height * r) + 1))
@@ -63,14 +65,47 @@ def build():
     d.rectangle([64, 150, 124, 190], fill=(201, 184, 166))
     d.rectangle([124, 150, 184, 190], fill=(255, 244, 224))
     d.rectangle([64, 150, 184, 190], outline=HOT, width=4)
-    d.text((60, 205), "SPLIT SCREEN", font=font(COND, 118, 2), fill=INK)
-    d.text((64, 340), "RFK Jr. on one side. The thing on the other.", font=font(BODY, 34), fill=INK)
-    d.text((64, 388), "Catalog + math, Sept 2023 to today", font=font(BODY, 28), fill=MUTE)
-    d.text((64, 440), "ภาพคู่: หน้า RFK กับของที่ถูกกล่าวหา", font=font(THAI, 30), fill=MUTE)
-    d.text((64, 560), "nanobotco.github.io/split-screen", font=font(BODY, 24), fill=HOT)
-    img.save(SITE / "card.jpg", quality=88)
-    print("card", SITE / "card.jpg")
+    size = 118
+    while size > 50 and d.textlength(head, font=font(COND, size, 2)) > W - 128:
+        size -= 6
+    d.text((60, 205), head, font=font(COND, size, 2), fill=INK)
+    lines = lines or [("RFK Jr. on one side. The thing on the other.", BODY, 34, INK),
+                      ("Catalog + math, Sept 2023 to today", BODY, 28, MUTE),
+                      ("ภาพคู่: หน้า RFK กับของที่ถูกกล่าวหา", THAI, 30, MUTE)]
+    y = 340
+    for text, face, sz, fill in lines:
+        d.text((64, y), text, font=font(face, sz), fill=fill)
+        y += 48 if sz >= 34 else 52
+    d.text((64, 560), address, font=font(BODY, 24), fill=HOT)
+    dest = SITE / out
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    img.save(dest, quality=88)
+    print("card", dest)
+
+
+# One card per page, named like the page's folder, saying the page's own title and line (read from the built
+# page) over tiles from the wall that page shows.
+PAGE_TILES = {
+    "left": ("left",), "right": ("right",), "thing": ("thing",), "face": ("face",),
+    "math": ("left", "right", "thing", "face"), "data": ("face", "thing", "right", "left"),
+}
+
+
+def build_pages():
+    import html
+    import re
+    for slug, slugs in PAGE_TILES.items():
+        page = SITE / slug / "index.html"
+        if not page.exists():
+            continue
+        t = page.read_text(encoding="utf-8")
+        title = re.search(r'<meta property="og:title" content="([^"]*)"', t)
+        desc = re.search(r'<meta property="og:description" content="([^"]*)"', t)
+        head = html.unescape(title.group(1)).split(" — ")[0].upper() if title else slug.upper()
+        line = html.unescape(desc.group(1)) if desc else ""
+        build(f"cards/{slug}.jpg", head, [(line, BODY, 34, INK)], slugs, f"nanobotco.github.io/split-screen/{slug}")
 
 
 if __name__ == "__main__":
     build()
+    build_pages()
